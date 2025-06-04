@@ -14,12 +14,22 @@ extend schema
   }
 )
 
-type Account 
+type LinkAccount 
 @key(fields: "id")
 @connect(
     source: "accounts"
     http: { GET: "/accounts/{$this.id}" }
     selection: "id name"
+    errors: {
+      message: "error.message"
+      extensions: """
+        code: error.code
+        status: $status
+        http: {
+          customErrorField: $("literal Field")
+        }
+      """
+    }
   ) {
     id: ID!
     name: String!

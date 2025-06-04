@@ -2,12 +2,10 @@ package org.example.dgstemplate.datafetchers;
 
 import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsData;
-import com.netflix.graphql.dgs.DgsEntityFetcher;
-import com.netflix.graphql.dgs.DgsQuery;
-import com.netflix.graphql.dgs.context.DgsContext;
 import graphql.GraphQLContext;
 import graphql.schema.DataFetchingEnvironment;
 import org.example.dgstemplate.models.Account;
+import org.example.dgstemplate.models.LinkAccount;
 
 import java.util.List;
 
@@ -15,8 +13,8 @@ import java.util.List;
 public class AccountDataFetcher {
 
     private List<Account> accounts = List.of(
-            new Account("1"),
-            new Account("2")
+            new LinkAccount("1"),
+            new LinkAccount("2")
     );
 
     @DgsData(parentType = "Pool")

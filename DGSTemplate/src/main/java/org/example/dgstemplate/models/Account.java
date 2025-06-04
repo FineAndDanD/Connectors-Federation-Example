@@ -1,4 +1,4 @@
 package org.example.dgstemplate.models;
 
-public record Account(String id) {
+public interface Account {
 }

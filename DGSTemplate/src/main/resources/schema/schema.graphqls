@@ -12,6 +12,10 @@ type Pool {
     accounts: [Account]
 }
 
-type Account @key(fields: "id") {
+interface Account {
+    id: ID!
+}
+
+type LinkAccount implements Account @key(fields: "id") {
     id: ID!
 }

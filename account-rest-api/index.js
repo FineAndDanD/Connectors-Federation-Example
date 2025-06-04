@@ -104,7 +104,9 @@ app.get('/accounts/:accountId', (req, res) => {
           ]
       })
   } else {
-    res.send({})
+    res.status(404).json({ error:  {
+      message: 'Account not found'
+    }})
   }
   
 })
