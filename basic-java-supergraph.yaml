@@ -1,0 +1,10 @@
+federation_version: =2.11.0-preview.2
+subgraphs:
+  relationship:
+    routing_url: http://localhost:8080/graphql
+    schema:
+      file: ./DGSTemplate/src/main/resources/schema/schema.graphqls # Schema provided via file
+  accounts:
+    routing_url: http://ignore
+    schema:
+      file: ./connector-schema/accounts.graphql

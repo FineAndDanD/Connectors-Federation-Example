@@ -1,0 +1,17 @@
+type Query {
+    relationship: Relationship
+}
+
+type Relationship {
+    id: ID!
+    pools: [Pool]
+}
+
+type Pool {
+    id: ID!
+    accounts: [Account]
+}
+
+type Account @key(fields: "id") {
+    id: ID!
+}

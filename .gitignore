@@ -1,0 +1,51 @@
+/node_modules
+
+# Gradle
+/build/
+/out/
+# Also covers /buildSrc/build/
+/*/build/
+/*/out/
+/.gradle/
+/buildSrc/.gradle/
+/buildSrc/.kotlin/
+
+# IntelliJ IDEA
+/.idea/
+!/.idea/icon.png
+!/.idea/codeStyles/
+!/.idea/copyright/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# STS and Eclipse/VSCode Java Pack
+.apt_generated
+.apt_generated_test
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+scripts/__pycache__
