@@ -5,6 +5,7 @@ import com.netflix.graphql.dgs.DgsData;
 import graphql.GraphQLContext;
 import graphql.schema.DataFetchingEnvironment;
 import org.example.dgstemplate.models.Account;
+import org.example.dgstemplate.models.AggregatedAccount;
 import org.example.dgstemplate.models.LinkAccount;
 
 import java.util.List;
@@ -14,7 +15,8 @@ public class AccountDataFetcher {
 
     private List<Account> accounts = List.of(
             new LinkAccount("1"),
-            new LinkAccount("2")
+            new AggregatedAccount("2"),
+            new LinkAccount("3")
     );
 
     @DgsData(parentType = "Pool")

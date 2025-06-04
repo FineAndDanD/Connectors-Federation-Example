@@ -19,3 +19,7 @@ interface Account {
 type LinkAccount implements Account @key(fields: "id") {
     id: ID!
 }
+
+type AggregatedAccount implements Account @key(fields: "id") {
+    id: ID!
+}

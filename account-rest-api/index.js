@@ -111,6 +111,38 @@ app.get('/accounts/:accountId', (req, res) => {
   
 })
 
+app.get('/aggregatedAccount/:accountId', (req, res) => {
+
+  if (req.params.accountId === '2') {
+    res.send({
+          id: "1",
+          aggregatedName: "Steve Jobs",
+          poolKeys: [
+            "1"
+          ],
+          accountValue: "$502340",
+          hasMutualFunds: true,
+          isActive: false,
+          accountBeneficiaries: [
+            {
+              mutualFunds: [
+                {
+                  name: "Rachel Test",
+                  accountId: "9",
+                  relationship: "Spouse"
+                }
+              ]
+            }
+          ]
+      })
+  } else {
+    res.status(404).json({ error:  {
+      message: 'Account not found'
+    }})
+  }
+  
+})
+
 app.listen(port, () => {
   console.log(`Accounts API listening on port ${port}`)
 })

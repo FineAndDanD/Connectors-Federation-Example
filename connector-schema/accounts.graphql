@@ -34,3 +34,24 @@ type LinkAccount
     id: ID!
     name: String!
 }
+
+type AggregatedAccount 
+@key(fields: "id")
+@connect(
+    source: "accounts"
+    http: { GET: "/aggregatedAccount/{$this.id}" }
+    selection: "id aggregatedName"
+    errors: {
+      message: "error.message"
+      extensions: """
+        code: error.code
+        status: $status
+        http: {
+          customErrorField: $("literal Field")
+        }
+      """
+    }
+  ) {
+    id: ID!
+    aggregatedName: String!
+}
